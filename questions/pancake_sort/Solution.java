@@ -13,7 +13,6 @@ Write a function pancakeSort(arr) that sorts and returns the input array.
 You are allowed to use only the function flip you wrote in the first step in order to make changes in the array.
 
 Example:
-
 input:  arr = [1, 5, 4, 3, 2]
 
 output: [1, 2, 3, 4, 5]

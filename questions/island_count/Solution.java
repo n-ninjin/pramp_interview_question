@@ -84,6 +84,8 @@ class Solution {
             See all 6 islands color-coded below.
          */
         System.out.println(getNumberOfIslands(binaryMatrix));
+        // TC: O(N⋅M)
+        // SC: O(N⋅M)
     }
 
 }

@@ -41,6 +41,8 @@ class Solution {
         // Expected output: 1487800378
         // since the increase in the number of people in the mall is the highest at that point
         System.out.println(findBusiestPeriod(data));
+        //TC: O(N)
+        //SC: O(1)
     }
 
 }

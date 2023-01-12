@@ -52,6 +52,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-
+        // TC: O(R*C)
+        // SC: O(R*C)
     }
 }

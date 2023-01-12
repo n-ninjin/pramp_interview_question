@@ -1,4 +1,4 @@
-Coding Mock Interview Questions from [pramp](https://www.pramp.com)_
+Coding Mock Interview Questions from [pramp](https://www.pramp.com)
 =========================================================================
 
 ## List of Questions

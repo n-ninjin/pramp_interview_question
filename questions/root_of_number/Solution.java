@@ -50,9 +50,9 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        // Expected output 1.913
+        /* Expected output 1.913 */
         System.out.println(root(7, 3));
-        // Expected output 3
+        /* Expected output 3 */
         System.out.println(root(9, 2));
     }
     // power function takes a constant time O(1)

@@ -14,3 +14,4 @@
 - [Decrypt Message](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/decrypt_message/Solution.java)
 - [BST Successor Search](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/bst_successor_search/Solution.java)
 - [Number of Paths](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/number_of_paths/Solution.java)
+- [Validate IP Address](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/validate_ip_address/Solution.java)

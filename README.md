@@ -16,3 +16,4 @@
 - [Number of Paths](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/number_of_paths/Solution.java)
 - [Validate IP Address](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/validate_ip_address/Solution.java)
 - [Array Index & Element Equality](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/array_index_element_equality/Solution.java)
+- [H-Tree Construction](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/h_tree_construction/Solution.java)

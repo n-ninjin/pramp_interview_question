@@ -19,3 +19,4 @@
 - [H-Tree Construction](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/h_tree_construction/Solution.java)
 - [Drone Flight Planner](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/drone_flight_planner/Solution.java)
 - [Flatten a Dictionary](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/flatten_dictionary/Solution.java)
+- [Award Budget Cuts](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/award_budget_cuts/Solution.java)

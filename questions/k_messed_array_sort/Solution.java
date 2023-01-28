@@ -79,8 +79,17 @@ class Solution {
         int k2 = 6;
         sortKMessedArray2(arr2, k2);
         System.out.println(Arrays.toString(arr2));
-        // TC: O(N * K)
-        // SC: O(1)
+
+        /*
+         Min Heap
+         TC: O(N * log(K))
+         SC: O(K)
+
+         Insertion sort
+         TC: O(N * log(K))
+         SC: O(1)
+
+         */
     }
 
 }

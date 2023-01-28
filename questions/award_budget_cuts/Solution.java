@@ -35,15 +35,16 @@ class Solution {
     static double findGrantsCap(double[] grantsArray, double newBudget) {
         // Sort the grants array in ascending order
         Arrays.sort(grantsArray);
-        int sum = 0;
+        int sum = 0, n = grantsArray.length;
         for (int i = 0; i < grantsArray.length; i++) {
+            int diff = n - i;
             // Check if the current grant, along with the remaining grants, would exceed the new budget
-            if (sum + (grantsArray.length - i) * grantsArray[i] <= newBudget) {
+            if (sum + diff * grantsArray[i] <= newBudget) {
                 // If not, add the current grant to the sum
                 sum += grantsArray[i];
             } else {
                 // If so, calculate the cap by dividing the remaining budget by the number of remaining grants
-                return (newBudget - sum) / (grantsArray.length - i);
+                return (newBudget - sum) / diff;
             }
         }
         // If the loop completes, return the last grant in the array

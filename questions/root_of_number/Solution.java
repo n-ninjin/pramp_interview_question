@@ -32,7 +32,15 @@ Constraints:
 [output] float
  */
 class Solution {
-
+    /**
+      Note : Math.pow(m-0.001,n) <= target <= Math.pow(m+0.001,n)
+      n = 3, x = 7
+      0 < y < 3.5, our second member of the sequence should be, again,
+      the average between our bounds 0 and 3.5 - approxRoot= 1.75.
+      This time 1.753 ≅ 5.3 < 7, which means 1.75 < y < 3.5, so we update lowerBound = 1.75.
+      The error is bounded by:
+                |y - approxRoot| < |upperBound - lowerBound|= |3.5- 1.75| = 1.75.
+     */
     static double root(double x, int n) {
         double l = 0.0, r = x;
         double m = l + (r - l) / 2.0;

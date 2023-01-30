@@ -34,9 +34,7 @@ class Solution {
     static int shortestCellPath(int[][] grid, int sr, int sc, int tr, int tc) {
         if (grid == null || grid.length == 0) return 0;
         Queue<int[]> q = new LinkedList<>();
-        Set<int[]> visited = new HashSet<>();
         q.add(new int[]{sr, sc});
-        visited.add(new int[]{sr, sc});
         int lvl = 0;
         int[][] dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
@@ -47,16 +45,12 @@ class Solution {
                 if (cur[0] == tr && cur[1] == tc) {
                     return lvl;
                 }
-
                 for (int[] dir : dirs) {
                     int x = dir[0] + cur[0];
                     int y = dir[1] + cur[1];
-
-                    if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length
-                            || grid[x][y] == 0 || visited.contains(new int[]{x, y}))
+                    if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] == 0)
                         continue;
                     grid[x][y] = 0;
-                    visited.add(new int[]{x, y});
                     q.add(new int[]{x, y});
                 }
             }
@@ -68,6 +62,22 @@ class Solution {
 
 
     public static void main(String[] args) {
+        /**
+         Test Case #1
+         Input: [[1,1,1,1],[0,0,0,1],[1,1,1,1]], 0, 0, 2, 0
+         Expected: 8
+         */
+        int[][] arr1 = {{1,1,1,1},{0,0,0,1},{1,1,1,1}};
+        System.out.println(shortestCellPath(arr1,0, 0, 2, 0));
+
+        /**
+         Test Case #2
+         Input: [[0,1,0],[1,0,0],[1,0,1]], 2, 0, 1, 0
+         Expected: 1
+         */
+        int[][] arr2 = {{0,1,0},{1,0,0},{1,0,1}};
+        System.out.println(shortestCellPath(arr2,2, 0, 1, 0));
+
         // TC: O(R*C)
         // SC: O(R*C)
     }

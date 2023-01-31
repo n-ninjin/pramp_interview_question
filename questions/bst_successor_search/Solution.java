@@ -31,7 +31,6 @@ Constraints:
 class Solution {
 
     static class Node {
-
         int key;
         Node left;
         Node right;
@@ -46,11 +45,21 @@ class Solution {
     }
 
     static class BinarySearchTree {
-
         Node root;
-
         Node findInOrderSuccessor(Node inputNode) {
-            // successor is somewhere lower in the right subtree
+            // your code goes here
+            if (inputNode == null) return inputNode;
+
+               /*
+               Test Case 1: InputNode = 9
+                       20
+                     /   \
+                    9***  25
+                   / \
+                  5  *12
+                      / \
+          answer => *11  14
+              */
             if (inputNode.right != null) {
                 inputNode = inputNode.right;
                 while (inputNode.left != null) {
@@ -58,11 +67,25 @@ class Solution {
                 }
                 return inputNode;
             }
-            // successor is somewhere upper in the tree
-            while (inputNode.parent != null && inputNode == inputNode.right) {
-                inputNode = inputNode.parent;
+              /*
+               Test Case 2: InputNode = 14
+                      20* <= answer
+                     /  \
+                    9*  25
+                   / \
+                  5   12*
+                      / \
+                     11  14 ***
+              */
+            Node ancestor = inputNode.parent; // 12
+            Node child = inputNode; // 14
+            while (ancestor != null && child == ancestor.right) {
+                // 12 != null && 12 == 12 | 9 != null && 12 == 12 | 20 != null && 9 != 25**
+                child = ancestor; // 14 -> 12 | 12 -> 9 |
+                ancestor = child.parent; // 12 -> 9 | 9 -> 20 |
             }
-            return inputNode.parent;
+
+            return ancestor; // 20
         }
 
         //  Given a binary search tree and a number, inserts a new node
@@ -70,7 +93,7 @@ class Solution {
         void insert(int key) {
 
             // 1. If the tree is empty, create the root
-            if(this.root == null) {
+            if (this.root == null) {
                 this.root = new Node(key);
                 return;
             }
@@ -81,9 +104,9 @@ class Solution {
             Node currentNode = this.root;
             Node newNode = new Node(key);
 
-            while(currentNode != null) {
-                if(key < currentNode.key) {
-                    if(currentNode.left == null) {
+            while (currentNode != null) {
+                if (key < currentNode.key) {
+                    if (currentNode.left == null) {
                         currentNode.left = newNode;
                         newNode.parent = currentNode;
                         break;
@@ -91,7 +114,7 @@ class Solution {
                         currentNode = currentNode.left;
                     }
                 } else {
-                    if(currentNode.right == null) {
+                    if (currentNode.right == null) {
                         currentNode.right = newNode;
                         newNode.parent = currentNode;
                         break;
@@ -108,12 +131,12 @@ class Solution {
         Node getNodeByKey(int key) {
             Node currentNode = this.root;
 
-            while(currentNode != null) {
-                if(key == currentNode.key) {
+            while (currentNode != null) {
+                if (key == currentNode.key) {
                     return currentNode;
                 }
 
-                if(key < currentNode.key) {
+                if (key < currentNode.key) {
                     currentNode = currentNode.left;
                 } else {
                     currentNode = currentNode.right;
@@ -144,6 +167,20 @@ class Solution {
 
         // Get a reference to the node whose key is 9
         test = tree.getNodeByKey(9);
+
+        // Find the in order successor of test
+        succ = tree.findInOrderSuccessor(test);
+
+        // Print the key of the successor node
+        if (succ != null) {
+            System.out.println("Inorder successor of " + test.key +
+                    " is " + succ.key);
+        } else {
+            System.out.println("Inorder successor does not exist");
+        }
+
+        // Get a reference to the node whose key is 9
+        test = tree.getNodeByKey(14);
 
         // Find the in order successor of test
         succ = tree.findInOrderSuccessor(test);

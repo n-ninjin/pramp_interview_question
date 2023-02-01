@@ -22,3 +22,4 @@
 - [Award Budget Cuts](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/award_budget_cuts/Solution.java)
 - [Time Planner](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/time_planner/Solution.java)
 - [Pairs with Specific Difference](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/pairs_with_specific_difference/Solution.java)
+- [Array Quadruplet](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/array_quadruplet/Solution.java)

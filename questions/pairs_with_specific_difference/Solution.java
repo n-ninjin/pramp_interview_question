@@ -31,13 +31,12 @@ class Solution {
     static int[][] findPairsWithGivenDifference(int[] arr, int k) {
         // your code goes here
         Set<Integer> hs = new HashSet<>();
-
         for (int i = 0; i < arr.length; i++) {
-            hs.add(arr[i]);
+            hs.add(arr[i]); // y
         }
 
         List<int[]> list = new ArrayList<>();
-        // x - y= k  x = k + y  y = arr[i]
+        // x - y = k  x = k + y  y = arr[i]
         for (int i = 0; i < arr.length; i++) {
             int x = k + arr[i];
             if (hs.contains(x)) {

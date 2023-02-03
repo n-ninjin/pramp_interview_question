@@ -24,3 +24,4 @@
 - [Pairs with Specific Difference](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/pairs_with_specific_difference/Solution.java)
 - [Array Quadruplet](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/array_quadruplet/Solution.java)
 - [Array of Array Products](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/array_of_array_products/Solution.java)
+- [Matrix Spiral Copy](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/matrix_spiral_copy/Solution.java)

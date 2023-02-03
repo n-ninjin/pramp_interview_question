@@ -24,6 +24,7 @@ Constraints:
  */
 
 import java.io.*;
+import java.sql.Array;
 import java.util.*;
 
 class Solution {
@@ -32,43 +33,38 @@ class Solution {
         // your code goes here
         int m = inputMatrix.length; // row
         int n = inputMatrix[0].length; // col
-
-        int counter = 0;
         int top = 0, bottom = m - 1, left = 0, right = n - 1;
-        int[] res = new int[m * n];
 
-        int k = 0;
-        while (counter < m * n) {
+        List<Integer> list = new ArrayList<>();
+        while (list.size() < m * n) {
             // left to right
-            for (int i = left; i <= right; i++) {
-                res[k++] = inputMatrix[top][i];
+            for (int col = left; col <= right; col++) {
+                list.add(inputMatrix[top][col]);
             }
             top++;
             // top to down
-            for (int i = top; i <= bottom; i++) {
-                res[k++] = inputMatrix[i][right];
+            for (int row = top; row <= bottom; row++) {
+                list.add(inputMatrix[row][right]);
             }
             right--;
 
             // right to left
-            if (top > bottom) break;
-
-            for (int i = right; i >= left; i--) {
-                res[k++] = inputMatrix[bottom][i];
+            if(top <= bottom) {
+                for (int col = right; col >= left; col--) {
+                    list.add(inputMatrix[bottom][col]);
+                }
+                bottom--;
             }
-            bottom--;
 
-            if (top > bottom) break;
             // bottom to top
-
-            for (int i = bottom; i >= top; i--) {
-                res[k++] = inputMatrix[i][left];
+            if(left <= right)  {
+                for (int row = bottom; row >= top; row--) {
+                    list.add(inputMatrix[row][left]);
+                }
+                left++;
             }
-            left++;
-
-            counter++;
         }
-        return res;
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static void main(String[] args) {
@@ -88,6 +84,13 @@ class Solution {
         System.out.println(Arrays.toString(spiralCopy(arr2)));
         int[] case2 = {1,2,3,4,5,10,9,8,7,6};
         System.out.println(Arrays.equals(spiralCopy(arr2), case2));
+
+
+        int[][] arr3 = {{1,11},{2,12},{3,13},{4,14},{5,15},{6,16},{7,17},{8,18},{9,19},{10,20}};
+        /* Expected output:  [1,11,12,13,14,15,16,17,18,19,20,10,9,8,7,6,5,4,3,2]*/
+        System.out.println(Arrays.toString(spiralCopy(arr2)));
+        int[] case3 = {1,11,12,13,14,15,16,17,18,19,20,10,9,8,7,6,5,4,3,2};
+        System.out.println(Arrays.equals(spiralCopy(arr3), case3));
 
     }
 

@@ -44,7 +44,6 @@ class Solution {
                 res[k++] = inputMatrix[top][i];
             }
             top++;
-            if (left > right || top > bottom) break;
             // top to down
             for (int i = top; i <= bottom; i++) {
                 res[k++] = inputMatrix[i][right];
@@ -52,14 +51,14 @@ class Solution {
             right--;
 
             // right to left
-            if (left > right || top > bottom) break;
+            if (top > bottom) break;
 
             for (int i = right; i >= left; i--) {
                 res[k++] = inputMatrix[bottom][i];
             }
             bottom--;
 
-            if (left > right || top > bottom) break;
+            if (top > bottom) break;
             // bottom to top
 
             for (int i = bottom; i >= top; i--) {
@@ -78,9 +77,18 @@ class Solution {
                 {11, 12, 13, 14, 15},
                 {16, 17, 18, 19, 20}};
         /* Expected output:  [1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6, 7, 8, 9, 14, 13, 12]*/
+        int[] case1 = {1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6, 7, 8, 9, 14, 13, 12};
         System.out.println(Arrays.toString(spiralCopy(arr)));
+        System.out.println(Arrays.equals(spiralCopy(arr), case1));
         //TC: O(N) N = rows * cols
         //SC: O(N) N = rows * cols
+
+        int[][] arr2 = {{1,2,3,4,5},{6,7,8,9,10}};
+        /* Expected output:  [1,2,3,4,5,10,9,8,7,6]*/
+        System.out.println(Arrays.toString(spiralCopy(arr2)));
+        int[] case2 = {1,2,3,4,5,10,9,8,7,6};
+        System.out.println(Arrays.equals(spiralCopy(arr2), case2));
+
     }
 
 }

@@ -57,7 +57,45 @@ class Solution {
             lvl++;
         }
         return -1;
+    }
 
+    static int shortestCellPath2(int[][] grid, int sr, int sc, int tr, int tc) {
+        if (grid == null || grid.length == 0) return 0;
+
+        LinkedList<Point> q = new LinkedList<>();
+        q.add(new Point(sr, sc, 0));
+
+        while (!q.isEmpty()) {
+            Point p = q.poll();
+            if (p.r == tr && p.c == tc) {
+                return p.lvl;
+            }
+            addPoint(new Point(p.r + 1, p.c, p.lvl + 1), grid, q);
+            addPoint(new Point(p.r - 1, p.c, p.lvl + 1), grid, q);
+            addPoint(new Point(p.r, p.c - 1, p.lvl + 1), grid, q);
+            addPoint(new Point(p.r, p.c + 1, p.lvl + 1), grid, q);
+        }
+        return -1;
+    }
+
+    static void addPoint(Point p, int[][] grid, LinkedList<Point> q) {
+        if (p.r < 0 || p.r >= grid.length || p.c < 0 || p.c >= grid[0].length || grid[p.r][p.c] != 1) {
+            return;
+        }
+        q.add(p);
+        grid[p.r][p.c] = 0;
+    }
+
+    static class Point {
+        int r;
+        int c;
+        int lvl;
+
+        Point(int r, int c, int lvl) {
+            this.r = r;
+            this.c = c;
+            this.lvl = lvl;
+        }
     }
 
 
@@ -67,16 +105,20 @@ class Solution {
          Input: [[1,1,1,1],[0,0,0,1],[1,1,1,1]], 0, 0, 2, 0
          Expected: 8
          */
-        int[][] arr1 = {{1,1,1,1},{0,0,0,1},{1,1,1,1}};
-        System.out.println(shortestCellPath(arr1,0, 0, 2, 0));
+        int[][] arr1 = {{1, 1, 1, 1}, {0, 0, 0, 1}, {1, 1, 1, 1}};
+        System.out.println(shortestCellPath(arr1, 0, 0, 2, 0));
+
+        // Using point class and BFS
+        int[][] arr3 = {{1, 1, 1, 1}, {0, 0, 0, 1}, {1, 1, 1, 1}};
+        System.out.println(shortestCellPath2(arr3, 0, 0, 2, 0));
 
         /**
          Test Case #2
          Input: [[0,1,0],[1,0,0],[1,0,1]], 2, 0, 1, 0
          Expected: 1
          */
-        int[][] arr2 = {{0,1,0},{1,0,0},{1,0,1}};
-        System.out.println(shortestCellPath(arr2,2, 0, 1, 0));
+        int[][] arr2 = {{0, 1, 0}, {1, 0, 0}, {1, 0, 1}};
+        System.out.println(shortestCellPath(arr2, 2, 0, 1, 0));
 
         // TC: O(R*C)
         // SC: O(R*C)

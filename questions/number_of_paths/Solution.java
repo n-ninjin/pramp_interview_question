@@ -36,8 +36,44 @@ Constraints:
  */
 
 class Solution {
-
+    static int cnt;
     static int numOfPathsToDest(int n) {
+        // your code goes here
+        cnt = 0;
+        helper(0, 0, n);
+        return cnt;
+    }
+
+    static void helper(int row, int col, int n) {
+        if (!isValid(row, col, n)) return;
+        if (row == n - 1 && col == n - 1) {
+            cnt++;
+        }
+        // up
+        helper(row + 1, col, n);
+        // right
+        helper(row, col + 1, n);
+    }
+
+    static boolean isValid(int row, int col, int n) {
+    /*
+       0 is valid point
+     2 110
+     1 100
+   r 0 000
+       012
+       c
+
+      not valid point
+       r,c
+      (1,0), (2, 0), (2,1)
+    */
+        if (n < col || n < row) return false;
+        if (row == col) return true;
+        return row > col ? false : true;
+    }
+
+    static int numOfPathsToDestDp(int n) {
         // your code goes here
         if (n == 0) return 0;
         if (n == 1) return 1;
@@ -55,8 +91,11 @@ class Solution {
 
     public static void main(String[] args) {
         int n = 4;
-        /*Expected output : 5*/
-        System.out.println(numOfPathsToDest(n));
+        /*Expected output : 5 DP approach*/
+        System.out.println(numOfPathsToDestDp(n));
+        int n2 = 6;
+        /*Expected output : 42 DFS approach*/
+        System.out.println(numOfPathsToDest(n2));
         // TC: O(n^2)
         // SC: O(n)
     }

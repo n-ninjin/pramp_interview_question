@@ -46,6 +46,13 @@ class Solution {
         dfs(binaryMatrix, r - 1, c);
         dfs(binaryMatrix, r, c + 1);
         dfs(binaryMatrix, r, c - 1);
+
+        /** //diagonal movement
+        dfs(binaryMatrix, r + 1, c + 1);
+        dfs(binaryMatrix, r + 1, c - 1);
+        dfs(binaryMatrix, r - 1, c + 1);
+        dfs(binaryMatrix, r - 1, c - 1);
+         */
     }
 
     static void bfs(int[][] grid, int r, int c) {

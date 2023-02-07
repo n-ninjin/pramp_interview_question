@@ -1,5 +1,5 @@
-package com.example.demo1.oop;
 
+package questions.oop;
 import java.util.Comparator;
 import java.util.Objects;
 

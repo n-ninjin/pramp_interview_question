@@ -8,8 +8,15 @@ from the parent node and ships them to its children nodes. The leaf nodes are ca
 direct to consumers. In addition, every node holds an integer that is the cost of shipping a car to it.
 
 Take for example the tree below:
-
-
+                   0 sum(0)
+              /    |     \
+             5     3       6 sum(6)
+            /     / \     /   \
+           4     2   0   1      5
+                /    |   sum(7)
+               1     10
+               |
+               1
 A path from Honda’s factory to a car dealership, which is a path from the root to a leaf in the tree,
 is called a Sales Path. The cost of a Sales Path is the sum of the costs for every node in the path.
 For example, in the tree above one Sales Path is 0→3→0→10, and its cost is 13 (0+3+0+10).

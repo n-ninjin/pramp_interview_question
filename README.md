@@ -26,3 +26,4 @@
 - [Array of Array Products](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/array_of_array_products/Solution.java)
 - [Matrix Spiral Copy](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/matrix_spiral_copy/Solution.java)
 - [Sales Path](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/sales_path/Solution.java)
+- [Bracket Match](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/bracket_match/Solution.java)

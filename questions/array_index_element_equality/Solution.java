@@ -19,6 +19,9 @@ Constraints:
 [output] integer
 
  */
+import java.io.*;
+import java.util.*;
+
 class Solution {
 
     static int indexEqualsValueSearch(int[] arr) {
@@ -28,9 +31,10 @@ class Solution {
 
         while (l <= r) {
             int m = l + (r - l) / 2;
+
             if (arr[m] < m) {
                 l = m + 1;
-            } else if (arr[m] == m && (m == 0 || arr[m - 1] < m - 1)) { // lowest index
+            } else if (arr[m] == m || (m == 0 || arr[m] < arr[m - 1])) {
                 return m;
             } else {
                 r = m - 1;
@@ -40,11 +44,9 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {-8, 0, 2, 5};
-        int[] arr2 = {0, 1, 2, 3};
-        /* expected output: 2 */
-        System.out.println(indexEqualsValueSearch(arr1));
-        /* expected output: 0 */
+        int[] arr = {-8,0,2,5};
+        System.out.println(indexEqualsValueSearch(arr));
+        int[] arr2 = {-1,0,3,6};
         System.out.println(indexEqualsValueSearch(arr2));
         // TC: O(logN)
         // SC: O(1)

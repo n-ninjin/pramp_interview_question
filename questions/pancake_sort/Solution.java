@@ -78,5 +78,21 @@ class Solution {
         // TC: O(N^2)
         // SC: O(1)
     }
+    /*
+    flip(arr, k) --> reverse function: until k
+                    i
+        0  1  2  3  4
+        1, 5, 4, 3, 2
+           m
+max 1   5  1  4  3  2   flip(arr, 1)
+        2  3  4  1  5   flip(arr, 4)
+max 2   4  3  2  1  5   flip(arr, 2)
+        1  2  3  4  5   flip(arr, 3)
+max 2   3  2  1  4  5   flip(arr, 2) -- 3
+        1  2  3  4  5
+max 1   2  1  3  4  5
+        1  2  3  4  5
+max 0
+    */
 
 }

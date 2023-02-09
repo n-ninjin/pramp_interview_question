@@ -3,7 +3,8 @@ package questions.array_index_element_equality;
 /*
 Array Index & Element Equality
 Given a sorted array arr of distinct integers, write a function indexEqualsValueSearch that returns the
-lowest index i for which arr[i] == i. Return -1 if there is no such index. Analyze the time and space complexities of
+lowest index i for which arr[i] == i. Return -1 if there is no such index.
+Analyze the time and space complexities of
 your solution and explain its correctness.
 
 Examples:

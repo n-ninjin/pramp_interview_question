@@ -28,3 +28,4 @@
 - [Sales Path](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/sales_path/Solution.java)
 - [Bracket Match](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/bracket_match/Solution.java)
 - [Move Zeros To End](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/move_zeros_to_end/Solution.java)
+- [Deletion Distance](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/deletion_distance/Solution.java)

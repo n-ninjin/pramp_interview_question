@@ -33,6 +33,22 @@ class Solution {
         // [20, 2, 1]
         //  20 16 80
 
+        // approach 1 : 2 array
+        int[] left = new int[n];
+        left[0] = 1;
+        for(int i = 1; i < n; i++) {
+            left[i] = left[i - 1] * arr[i - 1];
+        }
+        int runner = 1;
+        for (int i = arr.length - 2; i >= 0; i--) {
+            runner = runner * arr[i + 1];
+            left[i] = left[i] * runner;
+        }
+        return left;
+
+        /*
+        approach 2 : 2 array
+        -----------------------
         int[] arr1 = new int[n];
         int[] arr2 = new int[n];
         arr1[0] = 1;
@@ -52,6 +68,7 @@ class Solution {
             arr[i] = arr1[i] * arr2[i];
         }
         return arr;
+        */
     }
 
     public static void main(String[] args) {

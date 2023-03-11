@@ -1,4 +1,5 @@
 ## [Coding Mock Interview Questions from Pramp](https://www.pramp.com)
+<img width="727" alt="image" src="https://user-images.githubusercontent.com/108375365/224458244-5497f0d4-89dc-481c-bd06-cc0fd80e73ba.png">
 
 ### List of Questions
 - [Busiest Time in the Mall](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/busiest_time_in_the_mall/Solution.java)

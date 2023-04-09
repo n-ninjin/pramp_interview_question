@@ -32,3 +32,4 @@
 - [Deletion Distance](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/deletion_distance/Solution.java)
 - [Decode Variations](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/decode_variations/Solution.java)
 - [Getting a Different number](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/getting_different_number/Solution.java)
+- [Smallest Substring of All Characters](https://github.com/n-ninjin/pramp-mock-interview-questions/blob/main/questions/smallest_substring_of_all_characters/Solution.java)

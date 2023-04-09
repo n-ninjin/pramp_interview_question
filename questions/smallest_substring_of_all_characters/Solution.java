@@ -33,7 +33,7 @@ class Solution {
         }
 
         int left = 0, min = Integer.MAX_VALUE, l = 0, r = -1;
-        String res = "";
+
         for (int right = 0; right < str.length(); right++) {
             char curRight = str.charAt(right);
             charsS[curRight - 65]++;
@@ -44,11 +44,9 @@ class Solution {
                     l = left;
                     r = right;
                 }
-
                 charsS[str.charAt(left) - 65]--;
                 left++;
             }
-
         }
         return str.substring(l, r + 1);
     }
@@ -61,19 +59,19 @@ class Solution {
     }
 
     public static void main(String[] args) {
-       char[] arr01 = {'x','y','z'};
-       String str01 = "xyyzyzyx";
+        char[] arr01 = {'x', 'y', 'z'};
+        String str01 = "xyyzyzyx";
         // Case 1:
         // Expected value : zyx
         System.out.println(getShortestUniqueSubstring(arr01, str01));
 
-        char[] arr02 = {'A','B','C'};
+        char[] arr02 = {'A', 'B', 'C'};
         String str02 = "ADOBECODEBANCDDD";
         // Case 2:
         // Expected value : BANC
         System.out.println(getShortestUniqueSubstring(arr02, str02));
 
-        char[] arr03 = {'A','B','C','E','K','I'};
+        char[] arr03 = {'A', 'B', 'C', 'E', 'K', 'I'};
         String str03 = "KADOBECODEBANCDDDEI";
         // Case 3:
         // Expected value : KADOBECODEBANCDDDEI

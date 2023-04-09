@@ -83,8 +83,6 @@ public class TestEmployee {
         sortMapTest();
     }
 
-
-
     private static void sortMapTest() {
         HashMap<String, Integer> map = new HashMap<>();
         map.put("Mathematics", 90);
@@ -95,9 +93,9 @@ public class TestEmployee {
         System.out.println("Unsorted Map: " + map);
 
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             @Override
-            public int compare (Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
                 return o2.getValue() - o1.getValue();
             }
 
@@ -114,11 +112,9 @@ public class TestEmployee {
         Map<String, Integer> sortedMap2 = map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-
         System.out.println("Sorted Map by Values in Descending Order: " + sortedMap2);
 
     }
-
 
 
 }
